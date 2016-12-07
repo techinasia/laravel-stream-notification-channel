@@ -22,7 +22,15 @@ class StreamServiceProvider extends ServiceProvider
 
                 return new Client($key, $secret);
             });
+    }
 
+    /**
+     * Register bindings in the container.
+     *
+     * @return void
+     */
+    public function register()
+    {
         $source = realpath(__DIR__.'/../config/services.php');
 
         $this->mergeConfigFrom($source, 'services');
