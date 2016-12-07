@@ -5,7 +5,7 @@ namespace NotificationChannels\GetStream;
 use Illuminate\Support\ServiceProvider;
 use GetStream\Stream\Client;
 
-class MandrillServiceProvider extends ServiceProvider
+class StreamServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap any application services.
