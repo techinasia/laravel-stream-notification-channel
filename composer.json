@@ -1,0 +1,43 @@
+{
+    "name": "techinasia/laravel-getstream-notification-channel",
+    "description": "Stream Notifications Channel for Laravel 5.3",
+    "homepage": "https://github.com/techinasia/laravel-getstream-notification-channel",
+    "keywords": ["laravel", "notifications", "stream", "channel"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Melvin Lee",
+            "email": "melvin@techinasia.com",
+            "homepage": "http://zy.sg",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.6.4",
+        "illuminate/notifications": "^5.3",
+        "illuminate/queue": "^5.1|^5.2|^5.3",
+        "illuminate/support": "^5.1|^5.2|^5.3",
+        "get-stream/stream": "^2.2"
+    },
+    "require-dev": {
+        "mockery/mockery": "^0.9.5",
+        "orchestra/testbench": "^3.3",
+        "phpunit/phpunit": "^5.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "NotificationChannels\\GetStream\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "NotificationChannels\\GetStream\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit"
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
