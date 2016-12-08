@@ -9,8 +9,21 @@ use Illuminate\Support\Arr;
 
 class StreamMessage implements Arrayable
 {
+    /** @var string */
+    protected $application;
+
     /** @var array */
     protected $data = [];
+
+    /**
+     * Constructs an instance of StreamMessage.
+     *
+     * @param string $application
+     */
+    public function __construct($application = null)
+    {
+        $this->application = $application;
+    }
 
     /**
      * Overload methods to have setters for data payload.
@@ -28,6 +41,19 @@ class StreamMessage implements Arrayable
         $value = ! empty($arguments) ? $arguments[0] : '';
 
         Arr::set($this->data, snake_case($name), $value);
+
+        return $this;
+    }
+
+    /**
+     * Set Stream application.
+     *
+     * @param  string $name
+     * @return $this
+     */
+    public function application($name = '')
+    {
+        $this->application = $name;
 
         return $this;
     }
@@ -59,6 +85,9 @@ class StreamMessage implements Arrayable
      */
     public function toArray()
     {
-        return $this->data;
+        return [
+            'application' => $this->application,
+            'data' => $this->data
+        ];
     }
 }

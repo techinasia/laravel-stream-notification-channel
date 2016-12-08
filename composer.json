@@ -12,12 +12,18 @@
             "role": "Developer"
         }
     ],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "git@github.com:techinasia/laravel-stream.git"
+        }
+    ],
     "require": {
         "php": ">=5.6.4",
         "illuminate/notifications": "^5.3",
         "illuminate/queue": "^5.1|^5.2|^5.3",
         "illuminate/support": "^5.1|^5.2|^5.3",
-        "get-stream/stream": "^2.2"
+        "techinasia/laravel-stream": "dev-master"
     },
     "require-dev": {
         "mockery/mockery": "^0.9.5",

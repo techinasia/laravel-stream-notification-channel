@@ -2,23 +2,23 @@
 
 namespace NotificationChannels\GetStream;
 
-use GetStream\Stream\Client;
+use Techinasia\GetStream\StreamManager;
 use Illuminate\Notifications\Notification;
 use Illuminate\Support\Arr;
 
 class StreamChannel
 {
-    /** @var \GetStream\Stream\Client */
-    protected $client;
+    /** @var \Techinasia\GetStream\StreamManager */
+    protected $manager;
 
     /**
      * Constructs an instance of the channel.
      *
-     * @param \GetStream\Stream\Client $client
+     * @param \Techinasia\GetStream\StreamManager $manager
      */
-    public function __construct(Client $client)
+    public function __construct(StreamManager $manager)
     {
-        $this->client = $client;
+        $this->manager = $manager;
     }
 
     /**
@@ -32,10 +32,12 @@ class StreamChannel
     {
         $args = $notifiable->routeNotificationFor('Stream');
 
-        $data = $notification->toStream($notifiable)
+        $payload = $notification->toStream($notifiable)
             ->toArray();
 
-        $feed = $this->client->feed(Arr::get($args, 'type'), Arr::get($args, 'id'));
-        $feed->addActivity($data);
+        $client = $this->manager->application(Arr::get($payload, 'application'));
+
+        $feed = $client->feed(Arr::get($args, 'type'), Arr::get($args, 'id'));
+        $feed->addActivity(Arr::get($payload, 'data'));
     }
 }

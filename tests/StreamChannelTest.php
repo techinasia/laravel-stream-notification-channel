@@ -7,6 +7,7 @@ use GetStream\Stream\Feed;
 use Mockery;
 use NotificationChannels\GetStream\StreamChannel;
 use Orchestra\Testbench\TestCase;
+use Techinasia\GetStream\StreamManager;
 
 class StreamChannelTest extends TestCase
 {
@@ -14,8 +15,8 @@ class StreamChannelTest extends TestCase
     {
         parent::setUp();
 
-        $this->client = Mockery::mock(Client::class);
-        $this->channel = new StreamChannel($this->client);
+        $this->manager = Mockery::mock(StreamManager::class);
+        $this->channel = new StreamChannel($this->manager);
     }
 
     public function tearDown()
@@ -29,7 +30,11 @@ class StreamChannelTest extends TestCase
         $feedMock = Mockery::mock(Feed::class);
         $feedMock->shouldReceive('addActivity');
 
-        $this->client->shouldReceive('feed')->andReturn($feedMock);
+        $client = Mockery::mock(Client::class);
+        $client->shouldReceive('feed')->andReturn($feedMock);
+
+        $this->manager->shouldReceive('application')->andReturn($client);
+
         $this->channel->send(new TestNotifiable(), new TestNotification());
     }
 }
