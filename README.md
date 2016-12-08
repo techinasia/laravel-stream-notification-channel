@@ -16,7 +16,7 @@
 ## Installation
 Install this package with Composer:
 ``` bash
-composer require techinasia/laravel-getstream-notification-channel
+composer require techinasia/laravel-stream-notification-channel
 ```
 
 Register the service provider in your `config/app.php`:

@@ -1,7 +1,7 @@
 {
-    "name": "techinasia/laravel-getstream-notification-channel",
+    "name": "techinasia/laravel-stream-notification-channel",
     "description": "Stream Notifications Channel for Laravel 5.3",
-    "homepage": "https://github.com/techinasia/laravel-getstream-notification-channel",
+    "homepage": "https://github.com/techinasia/laravel-stream-notification-channel",
     "keywords": ["laravel", "notifications", "stream", "channel"],
     "license": "MIT",
     "authors": [
