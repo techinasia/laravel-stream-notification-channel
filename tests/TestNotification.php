@@ -9,6 +9,6 @@ class TestNotification extends Notification
 {
     public function toStream($notifiable)
     {
-        return (new StreamMessage());
+        return new StreamMessage();
     }
 }

@@ -2,9 +2,9 @@
 
 namespace NotificationChannels\GetStream;
 
-use Techinasia\GetStream\StreamManager;
 use Illuminate\Notifications\Notification;
 use Illuminate\Support\Arr;
+use Techinasia\GetStream\StreamManager;
 
 class StreamChannel
 {

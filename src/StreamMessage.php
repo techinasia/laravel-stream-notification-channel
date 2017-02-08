@@ -87,7 +87,7 @@ class StreamMessage implements Arrayable
     {
         return [
             'application' => $this->application,
-            'data' => $this->data
+            'data' => $this->data,
         ];
     }
 }

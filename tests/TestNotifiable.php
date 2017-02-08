@@ -17,7 +17,7 @@ class TestNotifiable
     {
         return [
             'type' => 'user',
-            'id' => '123'
+            'id' => '123',
         ];
     }
 }
