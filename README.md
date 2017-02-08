@@ -3,6 +3,7 @@
 [![Dependency Status](https://gemnasium.com/techinasia/laravel-stream-notification-channel.svg)](https://gemnasium.com/techinasia/laravel-stream-notification-channel)
 [![Build Status](https://travis-ci.org/techinasia/laravel-stream-notification-channel.svg)](https://travis-ci.org/techinasia/laravel-stream-notification-channel)
 [![Coverage Status](https://coveralls.io/repos/github/techinasia/laravel-stream-notification-channel/badge.svg)](https://coveralls.io/github/techinasia/laravel-stream-notification-channel)
+[![StyleCI Status](https://styleci.io/repos/75819599/shield)](https://styleci.io/repos/75819599)
 
 > Use Laravel 5.3 notifications to send activities to Stream.
 
