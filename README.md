@@ -52,6 +52,7 @@ You can add more applications by adding more key/secret pairs to the configurati
         'secret' => 'bar',
     ],
 ],
+```
 
 ## Usage
 Send notifications via Stream in your notification:
@@ -77,6 +78,35 @@ class TestNotification extends Notification
             ->foreignId('post:42');
     }
 }
+```
+
+You need to specify the ID and type of the notifiable by defining a `routeNotificationForStream` method on the entity:
+
+``` php
+/**
+ * Notification routing information for Stream.
+ *
+ * @return array
+ */
+public function routeNotificationForStream()
+{
+    return [
+        'type' => 'user',
+        'id' => $this->id,
+    ];
+}
+```
+
+### Available Message methods
+- `application(string $application)`: Sets the application to be used to send the notification.
+
+You can set any attributes of the payload by calling the name of the attribute in camel case with the value as the parameter:
+
+``` php
+return (new StreamMessage())
+    ->actor(1)
+    ->verb('like')
+    ->object(3);
 ```
 
 ## Changelog
