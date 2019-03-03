@@ -5,12 +5,9 @@ php:
   - 7.0
   - 7.1
 
-before_install:
-  - echo "memory_limit=520M" >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
-  
 before_script:
   - travis_retry composer self-update
-  - travis_retry composer install --prefer-source --no-interaction
+  - travis_retry php -d memory_limit=-1 composer install --prefer-source --no-interaction
 
 after_success:
   - travis_retry php vendor/bin/coveralls
