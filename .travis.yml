@@ -7,7 +7,7 @@ php:
 
 before_script:
   - travis_retry composer self-update
-  - travis_retry composer install --prefer-source --no-interaction --dev
+  - travis_retry composer install --prefer-source --no-interaction
 
 after_success:
   - travis_retry php vendor/bin/coveralls
