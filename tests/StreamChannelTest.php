@@ -2,12 +2,12 @@
 
 namespace NotificationChannels\GetStream\Tests;
 
-use GetStream\Stream\Client;
-use GetStream\Stream\Feed;
 use Mockery;
-use NotificationChannels\GetStream\StreamChannel;
+use GetStream\Stream\Feed;
+use GetStream\Stream\Client;
 use Orchestra\Testbench\TestCase;
 use Techinasia\GetStream\StreamManager;
+use NotificationChannels\GetStream\StreamChannel;
 
 class StreamChannelTest extends TestCase
 {

@@ -2,9 +2,9 @@
 
 namespace NotificationChannels\GetStream;
 
-use Illuminate\Notifications\Notification;
 use Illuminate\Support\Arr;
 use Techinasia\GetStream\StreamManager;
+use Illuminate\Notifications\Notification;
 
 class StreamChannel
 {
@@ -32,8 +32,7 @@ class StreamChannel
     {
         $args = $notifiable->routeNotificationFor('Stream');
 
-        $payload = $notification->toStream($notifiable)
-            ->toArray();
+        $payload = $notification->toStream($notifiable)->toArray();
 
         $client = $this->manager->application(Arr::get($payload, 'application'));
 
