@@ -4,8 +4,8 @@ namespace NotificationChannels\GetStream;
 
 use DateTime;
 use DateTimeZone;
-use Illuminate\Support\Arr;
 use Illuminate\Contracts\Support\Arrayable;
+use Illuminate\Support\Arr;
 
 class StreamMessage implements Arrayable
 {
