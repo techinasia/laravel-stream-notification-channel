@@ -18,7 +18,7 @@ class StreamMessage implements Arrayable
     /**
      * Constructs an instance of StreamMessage.
      *
-     * @param string $application
+     * @param null|string $application
      */
     public function __construct($application = null)
     {
@@ -30,7 +30,7 @@ class StreamMessage implements Arrayable
      *
      * @param  string $name
      * @param  array  $arguments
-     * @return mixed
+     * @return $this
      */
     public function __call($name, array $arguments)
     {

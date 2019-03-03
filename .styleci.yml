@@ -1,5 +1,4 @@
 preset: laravel
-linting: true
 
 enabled:
   - alpha_ordered_imports
