@@ -7,7 +7,7 @@ php:
 
 before_script:
   - travis_retry composer self-update
-  - travis_retry php -d memory_limit=-1 composer install --prefer-source --no-interaction
+  - travis_retry COMPOSER_MEMORY_LIMIT=-1 composer install --prefer-source --no-interaction
 
 after_success:
   - travis_retry php vendor/bin/coveralls
